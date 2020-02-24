@@ -32,5 +32,13 @@ export class SportsService {
     console.log(this.socialInfo);
   }
 
+  submitData() {
+    return this.http.post('/profile', {
+      basicInfo: this.basicInfo,
+      aboutInfo: this.aboutInfo,
+      socialInfo: this.socialInfo
+    });
+  }
+
   constructor(private http: HttpClient) {}
 }

@@ -16,5 +16,9 @@ export class SummaryComponent implements OnInit {
     this.basicInfo = sportsService.basicInfo;
   }
 
+  submitData() {
+    this.sportsService.submitData();
+  }
+
   ngOnInit() {}
 }
