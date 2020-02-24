@@ -28,7 +28,7 @@ import { SummaryComponent } from './summary/summary.component';
     BasicInfoComponent,
     AboutComponent,
     SocialComponent,
-    summaryComponent
+    SummaryComponent
   ],
   bootstrap: [AppComponent],
   providers: [SportsService]
