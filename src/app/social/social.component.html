@@ -3,17 +3,38 @@
 <form [formGroup]="socialForm">
   <div>
     <label for="twitter">Twitter</label>
-    <input id="twitter" type="text" formControlName="twitter" />
+    <input
+      id="twitter"
+      type="text"
+      formControlName="twitter"
+      [value]="
+        sportsService.socialInfo ? sportsService.socialInfo.twitter : null
+      "
+    />
   </div>
 
   <div>
     <label for="instagram">Instagram</label>
-    <input id="instagram" type="text" formControlName="instagram" />
+    <input
+      id="instagram"
+      type="text"
+      formControlName="instagram"
+      [value]="
+        sportsService.socialInfo ? sportsService.socialInfo.instagram : null
+      "
+    />
   </div>
 
   <div>
     <label for="facebook">Facebook</label>
-    <input id="facebook" type="text" formControlName="facebook" />
+    <input
+      id="facebook"
+      type="text"
+      formControlName="facebook"
+      [value]="
+        sportsService.socialInfo ? sportsService.socialInfo.facebook : null
+      "
+    />
   </div>
 
   <button routerLink="summary" (click)="onSubmit(socialForm.value)">

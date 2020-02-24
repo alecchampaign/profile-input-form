@@ -3,7 +3,12 @@
 <form [formGroup]="basicInfoForm">
   <div>
     <label for="name">Name</label>
-    <input id="name" type="text" formControlName="name" />
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      [value]="sportsService.basicInfo ? sportsService.basicInfo.name : null"
+    />
   </div>
 
   <div>
@@ -31,7 +36,14 @@
 
   <div>
     <label for="birthDate">Date of Birth</label>
-    <input id="birthDate" type="date" formControlName="birthDate" />
+    <input
+      id="birthDate"
+      type="date"
+      formControlName="birthDate"
+      [value]="
+        sportsService.basicInfo ? sportsService.basicInfo.birthDate : null
+      "
+    />
   </div>
 
   <button routerLink="about" (click)="onSubmit(basicInfoForm.value)">

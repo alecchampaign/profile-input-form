@@ -8,17 +8,35 @@
       id="description"
       formControlName="description"
       rows="4"
+      [value]="
+        sportsService.aboutInfo ? sportsService.aboutInfo.description : null
+      "
+      ng-required="true"
     ></textarea>
   </div>
 
   <div>
     <label for="location">Location</label>
-    <input id="location" type="text" formControlName="location" />
+    <input
+      id="location"
+      type="text"
+      formControlName="location"
+      [value]="
+        sportsService.aboutInfo ? sportsService.aboutInfo.location : null
+      "
+      ng-required="true"
+    />
   </div>
 
   <div>
     <label for="team">Team</label>
-    <input id="team" type="text" formControlName="team" />
+    <input
+      id="team"
+      type="text"
+      formControlName="team"
+      [value]="sportsService.aboutInfo ? sportsService.aboutInfo.team : null"
+      ng-required="true"
+    />
   </div>
 
   <button routerLink="social" (click)="onSubmit(aboutForm.value)">
