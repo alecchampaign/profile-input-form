@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const dbUrl = require('./confidential').dbUrl;
+const dbUrl = process.env.DBURL || require('./confidential').dbUrl;
+const port = process.env.PORT || 4200;
 const Profile = require('./model');
 console.log('URL: ', dbUrl);
 
@@ -47,5 +48,5 @@ app.get('/profile', (req, res) => {});
 
 app.put('/profile', (req, res) => {});
 
-app.listen(4200);
+app.listen(port);
 console.log('App listening on port 4200');
