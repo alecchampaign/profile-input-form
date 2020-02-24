@@ -1,0 +1,40 @@
+<h2>Basic Info</h2>
+
+<form [formGroup]="basicInfoForm">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="sport">Sport</label>
+    <select id="sport" formControlName="sport">
+      <option *ngFor="let sport of sports | async">{{ sport }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="nationality">Nationality</label>
+    <select id="nationality" formControlName="nationality">
+      <option *ngFor="let country of countries | async">{{ country }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="gender">Gender</label>
+    <select id="gender" formControlName="gender">
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="birthDate">Date of Birth</label>
+    <input id="birthDate" type="date" formControlName="birthDate" />
+  </div>
+
+  <button routerLink="/products/about" (click)="onSubmit(basicInfoForm.value)">
+    Next
+  </button>
+</form>
