@@ -1,0 +1,27 @@
+<h2>About</h2>
+
+<form [formGroup]="aboutForm">
+  <div>
+    <label for="description">Description</label>
+    <br />
+    <textarea
+      id="description"
+      formControlName="description"
+      rows="4"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="location">Location</label>
+    <input id="location" type="text" formControlName="location" />
+  </div>
+
+  <div>
+    <label for="team">Team</label>
+    <input id="team" type="text" formControlName="team" />
+  </div>
+
+  <button routerLink="social" (click)="onSubmit(aboutForm.value)">
+    Next
+  </button>
+</form>

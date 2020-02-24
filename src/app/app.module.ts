@@ -16,7 +16,7 @@ import { AboutComponent } from './about/about.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: BasicInfoComponent },
-      { path: '/about', component: AboutComponent }
+      { path: 'about', component: AboutComponent }
     ])
   ],
   declarations: [AppComponent, BasicInfoComponent, AboutComponent],
