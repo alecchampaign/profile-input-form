@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { BasicInfoComponent } from './basic-info/basic-info.component';
 import { SportsService } from './sports.service';
 import { AboutComponent } from './about/about.component';
+import { SocialComponent } from './social/social.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   imports: [
@@ -16,10 +18,18 @@ import { AboutComponent } from './about/about.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: BasicInfoComponent },
-      { path: 'about', component: AboutComponent }
+      { path: 'about', component: AboutComponent },
+      { path: 'about/social', component: SocialComponent },
+      { path: 'about/social/summary', component: SummaryComponent }
     ])
   ],
-  declarations: [AppComponent, BasicInfoComponent, AboutComponent],
+  declarations: [
+    AppComponent,
+    BasicInfoComponent,
+    AboutComponent,
+    SocialComponent,
+    summaryComponent
+  ],
   bootstrap: [AppComponent],
   providers: [SportsService]
 })

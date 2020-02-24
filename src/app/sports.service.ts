@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class SportsService {
   basicInfo;
   aboutInfo;
+  socialInfo;
 
   getSports() {
     return this.http.get('/assets/sports.json');
@@ -24,6 +25,11 @@ export class SportsService {
   saveAboutInfo(info) {
     this.aboutInfo = info;
     console.log(this.aboutInfo);
+  }
+
+  saveSocialInfo(info) {
+    this.socialInfo = info;
+    console.log(this.socialInfo);
   }
 
   constructor(private http: HttpClient) {}

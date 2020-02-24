@@ -1,0 +1,22 @@
+<h2>Social</h2>
+
+<form [formGroup]="socialForm">
+  <div>
+    <label for="twitter">Twitter</label>
+    <input id="twitter" type="text" formControlName="twitter" />
+  </div>
+
+  <div>
+    <label for="instagram">Instagram</label>
+    <input id="instagram" type="text" formControlName="instagram" />
+  </div>
+
+  <div>
+    <label for="facebook">Facebook</label>
+    <input id="facebook" type="text" formControlName="facebook" />
+  </div>
+
+  <button routerLink="summary" (click)="onSubmit(socialForm.value)">
+    Next
+  </button>
+</form>
