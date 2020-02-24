@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -33,11 +33,15 @@ export class SportsService {
   }
 
   submitData() {
-    return this.http.post('/profile', {
-      basicInfo: this.basicInfo,
-      aboutInfo: this.aboutInfo,
-      socialInfo: this.socialInfo
-    });
+    console.log('Sending data');
+    return this.http.post(
+      'localhost:4000/profile',
+      JSON.stringify({
+        basicInfo: this.basicInfo,
+        aboutInfo: this.aboutInfo,
+        socialInfo: this.socialInfo
+      })
+    );
   }
 
   constructor(private http: HttpClient) {}

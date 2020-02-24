@@ -389,11 +389,12 @@ let SportsService = class SportsService {
         console.log(this.socialInfo);
     }
     submitData() {
-        return this.http.post('/profile', {
+        console.log('Sending data');
+        return this.http.post('localhost:4000/profile', JSON.stringify({
             basicInfo: this.basicInfo,
             aboutInfo: this.aboutInfo,
             socialInfo: this.socialInfo
-        });
+        }));
     }
 };
 SportsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
